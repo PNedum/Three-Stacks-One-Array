@@ -34,7 +34,7 @@ class ThreeStacks:
             # been assigned, we break the loop.
             while index < (len(self.array) - 1):
                 if index in self.arr:
-                    index = self.size + 1
+                    index = index + 1
                 else:
                     break
             # Next, we append the top of the given stack to the array that stores the tops of that stack.
