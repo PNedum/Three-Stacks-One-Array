@@ -86,7 +86,6 @@ class ThreeStacks:
         return self.size == len(self.array)
 
 
-
 # This builds the GUI
 if __name__ == '__main__':
     class app:
@@ -95,6 +94,7 @@ if __name__ == '__main__':
             self.master.geometry("1000x350")
             self.master.title("Three Stack Implementation")
             self.create_stack()
+            self.res = ''
 
         # This function builds the stack UI
         def create_stack(self):
@@ -211,9 +211,14 @@ if __name__ == '__main__':
                 return
             # This catches exceptions if the number input is not within range of stacks.
             if self.stack_number not in range(1, 4):
-                return print("Enter values of 1, 2 or 3")
+                self.res = "Enter values of 1, 2 or 3"
+                print(self.res)
+            elif self.stack.isFull():
+                self.res = "Stack is full"
+                print(self.res)
             else:
                 self.stack.push(self.push_value, self.stack_number)
+            self.lbl2.configure(text=self.res, font=self.titleFont)
 
 
         # This defines what happens when you press the pop button. It pops items to the stack.
@@ -229,6 +234,7 @@ if __name__ == '__main__':
             else:
                 self.res = self.stack.pop(self.stack_number)
                 print(self.res)
+
             self.lbl2.configure(text=self.res, font=self.titleFont)
 
 
