@@ -131,9 +131,9 @@ if __name__ == '__main__':
 
         # This function prints the application information.
         def intro(self):
-            self.res = "This application allows you to implement three stacks in one array"
-            print(self.res)
-            self.lbl.configure(text=self.res, font=self.titleFont)
+            self.result = "This application allows you to implement three stacks in one array"
+            print(self.result)
+            self.lbl.configure(text=self.result, font=self.titleFont)
 
         # This function defines the push, pop and top function UIs.
         def stack_ops(self):
